@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!-- <h1>Home Page</h1>
+    <p>site for manage energy.</p> -->
+
+<h2 align="center">{{ name }}</h2>
+
+
+<h2>Tags</h2>
+<ul>
+    <!-- for loop-->
+    {% for tag in tags %}
+    <li>
+        {{tag}}
+    </li>
+    {% endfor %}
+    <!--end for loop-->
+</ul>
+
+<h2>Population</h2>
+<ul>
+    <!--if loop-->
+    {% if rating > 3 %}
+    <h3>Good</h3>
+    {% else %}
+    <h3>Not bad</h3>
+    {% endif %}
+    <!--end if loop-->
+</ul>
+{% endblock content %}
