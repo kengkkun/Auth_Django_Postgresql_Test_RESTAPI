@@ -2,12 +2,15 @@ from django.db import models
 
 # Create your models here.
 
+# This is model structer in database
+
 
 class Employee(models.Model):
     fullname = models.CharField(max_length=100)
     mobile = models.CharField(max_length=10)
     cleaned = models.CharField(max_length=100)
     time_stamp = models.DateTimeField(auto_now_add=True)
+
 
 class IotDevices(models.Model):
     device_name = models.CharField(max_length=20)

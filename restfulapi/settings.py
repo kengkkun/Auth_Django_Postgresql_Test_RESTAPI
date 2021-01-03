@@ -26,7 +26,7 @@ SECRET_KEY = 'nuhc9(y$91^+4yq&t05zsugq&&sy2pnl4#-fd2wj0e(p)n(ypi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0']
 
 
 # Application definition
@@ -38,15 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'employeeapi',
-    'rest_framework',
-    'corsheaders',
+    'employeeapi',  # Add app employeeapi
+    'rest_framework',  # Rest_framework
+    'corsheaders',  # corsheaders
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware', # Note that this needs to be placed above CommonMiddleware
+    # Note that this needs to be placed above CommonMiddleware
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -62,10 +63,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'restfulapi.urls'
 
+# Join DIR template here.
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ join(BASE_DIR, 'templates') ],
+        'DIRS': [join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -87,9 +89,9 @@ WSGI_APPLICATION = 'restfulapi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'restapiDB',
+        'NAME': 'test',
         'USER': 'postgres',
-        'PASSWORD': '1',
+        'PASSWORD': '1234',
         'HOST': 'localhost',
     }
 }
